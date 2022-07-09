@@ -1,0 +1,126 @@
+configuration {
+    show-icons:                     false;
+	font:                      		"Comfortaa 14";
+    disable-history:                false;
+	sidebar-mode: 					false;
+}
+
+* {
+    background-color:               @background;
+    text-color:                     @foreground;
+    background:                     #212121ff;
+    background-alt:              	#00000000;
+    background-bar:                 #709870;
+    foreground:                     #f5f5f5b3;
+    accent:			            	#074d07;
+    border:		               		#074d07;
+    selected:               		#151515ff;
+}
+
+window {
+    transparency:                   "real";
+    border-radius:                  0px;
+    location:                       center;
+    width:                       	500px;
+    x-offset:                       0px;
+    y-offset:                       0px;
+    border:                         1px;
+    border-color:                   @border;
+}
+
+/* prompt { */
+/*     enabled: 						true; */
+/*     padding:                        10px; */
+/* 	background-color: 				@selected; */
+/* 	text-color: 					@accent; */
+/*     border:                  		2px 2px 2px 2px; */
+/*     border-radius:                  0px; */
+/*     border-color:                  	@accent; */
+/* } */
+/*  */
+/* textbox-prompt-colon { */
+/* 	expand: 						false; */
+/* 	str: 							" Screenshot "; */
+/* 	background-color: 				@accent; */
+/* 	text-color: 					@background; */
+/*     padding:                        12px 10px 0px 10px; */
+/* } */
+/*  */
+/* inputbar { */
+/* 	children: 						[ textbox-prompt-colon, prompt ]; */
+/*     spacing:                        0px; */
+/*     background-color:               @background; */
+/*     text-color:                     @foreground; */
+/*     expand:                         false; */
+/*     border:                  		0px; */
+/*     border-radius:                  0px; */
+/*     border-color:                  	@accent; */
+/*     margin:                         0px 0px 0px 0px; */
+/*     padding:                        0px; */
+/*     position:                       center; */
+/* } */
+
+listview {
+    columns:						3;
+    lines:							1;
+    spacing:                        15px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background;
+    /* children:                       [ inputbar, listview ]; */
+    children:                       [ listview ];
+    spacing:                        15px;
+    margin:                         40px;
+}
+
+element {
+    background-color:               @background;
+    text-color:                     @foreground;
+    orientation:                    vertical;
+    border-radius:                  0px;
+}
+
+element-text {
+    background-color: 				inherit;
+    text-color:       				inherit;
+	font:							"feather 32";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         40px 0px 40px 0px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @off;
+    text-color:                     @background;
+    border-radius:                  0px;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @on;
+    text-color:                     @background;
+}
+
+element selected {
+    background-color:               @selected;
+    text-color:                     @foreground;
+	border:							0% 0% 0.3% 0%;
+    border-radius:                  5px;
+    border-color:                  	@border;
+}
+
+element selected.urgent {
+    background-color:               @on;
+    text-color:                     @background;
+}
+
+element selected.active {
+    background-color:               @off;
+    color:                          @background;
+}

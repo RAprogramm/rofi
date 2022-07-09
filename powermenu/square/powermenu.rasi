@@ -1,0 +1,95 @@
+configuration {
+    show-icons:                     false;
+	font:                      		"Comfortaa 12";
+    disable-history:                false;
+	sidebar-mode: 					false;
+}
+
+* {
+    background-color:               @background;
+    text-color:                     @foreground;
+}
+* {
+    background:                     #000000;
+    /* background:                     #212121ff; */
+    background-alt:              	#00000000;
+    background-bar:                 #709870;
+    foreground:                     #f5f5f5b3;
+    accent:			            	#074d07;
+    border:		               		#074d07;
+    selected:               		#151515ff;
+}
+
+window {
+    transparency:                   "real";
+    border-radius:                  0px;
+    location:                       eastnorth;
+	width:							79;
+    x-offset:                       0;
+    y-offset:                       25px;
+    border:                         0px 0px 1px 1px;
+    border-color:                   @border;
+}
+
+listview {
+    columns:						1;
+    lines:							3;
+    spacing:                        12px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background;
+    children:                       [ listview ];
+    spacing:                        12px;
+    margin:                         12px;
+}
+
+element {
+    text-color:                     @foreground;
+    orientation:                    vertical;
+    border-radius:                  5px;
+}
+
+element-text {
+    background-color: 				inherit;
+    text-color:       				inherit;
+	font:							"feather 20";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         19px 10px 19px 10px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @off;
+    text-color:                     @background;
+    border-radius:                  5px;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @on;
+    text-color:                     @background;
+}
+
+element selected {
+    background-color:               @selected;
+    text-color:                     @foreground;
+	border:							0% 0% 0.3% 0%;
+    border-radius:                  5px;
+    border-color:                  	@border;
+}
+
+element selected.urgent {
+    background-color:               @on;
+    text-color:                     @background;
+}
+
+element selected.active {
+    background-color:               @off;
+    color:                          @background;
+}
